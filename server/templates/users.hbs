@@ -1,0 +1,19 @@
+<div class="users-page">
+	<h1>ユーザー一覧（デバッグ用）</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>userId</th>
+				<th>password</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each users}}
+				<tr>
+					<td>{{userId}}</td>
+					<td>{{password}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>

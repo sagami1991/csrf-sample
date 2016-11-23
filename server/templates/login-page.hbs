@@ -1,0 +1,15 @@
+<div class="login-page">
+	<h1>ログインページ</h1>
+	<div style="color:red">{{errorMsg}}</div>
+	<form action="/login" method="post">
+		<p>
+			<label for="userId">ユーザーID</label>
+			<input type="text" name="userId" id="userId">
+		</p>
+		<p>
+			<label for="password">パスワード</label>
+			<input type="password" name="password" id="password">
+		</p>
+		<button type="submit">ログイン</button>
+	</form>
+</div>

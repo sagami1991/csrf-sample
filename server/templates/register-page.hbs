@@ -1,0 +1,15 @@
+<div class="register-page">
+	<h1>会員登録ページ</h1>
+	<div style="color:red">{{errorMsg}}</div>
+	<form action="/register" method="post">
+		<p>
+			<label for="userId">ユーザーID</label>
+			<input type="text" name="userId" id="userId">
+		</p>
+		<p>
+			<label for="password">パスワード</label>
+			<input type="password" name="password" id="password">
+		</p>
+		<button type="submit">会員登録</button>
+	</form>
+</div>

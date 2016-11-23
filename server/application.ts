@@ -43,7 +43,7 @@ class Application {
 	}
 
 	private static initControllers(app: Express) {
-		const userRepository = new UserRepository(this.db.collection("users"));
+		const userRepository = new UserRepository(this.db.collection("csrf-users"));
 		new MainController(app, userRepository).init();
 	}
 

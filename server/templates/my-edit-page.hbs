@@ -1,0 +1,15 @@
+<div class="my-edit-page">
+	<h1>会員情報変更ページ</h1>
+	<div style="color:red">{{errorMsg}}</div>
+	<form action="/mypage/edit" method="post">
+		<p>
+			<label for="userId">ユーザーID</label>
+			<input type="text" name="userId" id="userId" value="{{user.userId}}" />
+		</p>
+		<p>
+			<label for="password">パスワード</label>
+			<input type="text" name="password" id="password" value="{{user.password}}" />
+		</p>
+		<button type="submit">修正</button>
+	</form>
+</div>
