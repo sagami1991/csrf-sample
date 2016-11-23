@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+nodeserver.cmd
+npm-debug.log
+db-backup/
+server/**/*.js
+server/**/*.map
+server/public
+server/templates

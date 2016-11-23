@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "es6", 
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "sourceMap": true,
+		"types": [
+			"node",
+			"express",
+			"request",
+            "express-handlebars",
+            "handlebars",
+			"mongodb",
+			"node-uuid"
+		],
+		"lib": [
+			"es2016"
+		]
+    },
+	"include": [
+        "./server/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+		"client/**/*.ts"
+    ]
+}
