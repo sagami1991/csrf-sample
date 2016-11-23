@@ -8,6 +8,7 @@ export class MainController {
 				private userRepository: UserRepository) {};
 	public init() {
 		this.setGlobalVar();
+		this.app.use((req, res, next) => this.sessionToVar(req, res, next));
 		this.app.use('/mypage/**', (req, res, next) => this.sessionCheck(req, res, next));
 		this.app.get('/', (req, res) => this.top(req, res));
 		this.app.get('/login-page', (req, res) => this.loginPage(req, res));
@@ -32,10 +33,12 @@ export class MainController {
 			{link: "/users", text: "ユーザー一覧"},
 		]
 	}
-
+	private sessionToVar(req: Request, res: Response, next: NextFunction) {
+		res.locals.session = req.session;
+		next();
+	}
 	private sessionCheck(req: Request, res: Response, next: NextFunction) {
 		if (req.session["user"]) {
-			res.locals.session = req.session;
 			next();
 		} else {
 			res.redirect('/login-page');

