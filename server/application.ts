@@ -12,6 +12,7 @@ import * as cookieParser from "cookie-parser";
 import * as bodyParser from "body-parser";
 import * as session from "express-session";
 import {MyUtil, MyError} from "./share/serverUtil";
+import * as helmet from "helmet";
 
 class Application {
 	private static db: Db;
@@ -63,6 +64,7 @@ class Application {
 		// jsonのリクエスト有効
 		app.use(bodyParser.urlencoded({ extended: false }));
 		app.use(bodyParser.json());
+		app.use(helmet());
 		this.initControllers(app);
 		// エラーハンドリング
 		app.use((err: Error, req: Request, res: Response, next: express.NextFunction) => {
