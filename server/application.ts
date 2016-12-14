@@ -1,5 +1,3 @@
-/** Webアプリの根本ページ */
-
 import 'source-map-support/register'; // エラー時、tsファイルの行数を教える
 import {createServer}  from 'http';
 import * as express from 'express';
@@ -11,7 +9,7 @@ import {MongoClient, Db} from 'mongodb';
 import * as cookieParser from "cookie-parser";
 import * as bodyParser from "body-parser";
 import * as session from "express-session";
-import {MyUtil, MyError} from "./share/serverUtil";
+import {MyError} from "./share/serverUtil";
 import * as helmet from "helmet";
 
 class Application {
@@ -43,6 +41,7 @@ class Application {
 		});
 	}
 
+	/** controllerの初期化 */
 	private static initControllers(app: Express) {
 		const userRepository = new UserRepository(this.db.collection("csrf-users"));
 		new MainController(app, userRepository).init();

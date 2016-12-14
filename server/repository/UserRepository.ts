@@ -1,6 +1,7 @@
 import {Collection, ObjectID} from 'mongodb';
 import {UserInfo} from "../share/Interfaces";
 
+/** ユーザー情報テーブルとやりとりをするクラス */
 export class UserRepository {
 	constructor(private users: Collection) {}
 

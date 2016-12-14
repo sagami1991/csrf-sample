@@ -31,12 +31,14 @@ export class MainController {
 			{link: "/mypage/top", text: "マイ"},
 			{link: "/mypage/edit-page", text: "会員情報編集"},
 			{link: "/users", text: "ユーザー一覧"},
-		]
+		];
 	}
+	/** sessionをtemplateエンジンで使えるように設定 */
 	private sessionToVar(req: Request, res: Response, next: NextFunction) {
 		res.locals.session = req.session;
 		next();
 	}
+	/** セッションにユーザー情報が存在しない場合はログインページに飛ばす */
 	private sessionCheck(req: Request, res: Response, next: NextFunction) {
 		if (req.session["user"]) {
 			next();

